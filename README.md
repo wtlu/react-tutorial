@@ -13,15 +13,4 @@ npm install
 node server.js
 ```
 
-### Python
-
-```sh
-python server.py
-```
-
-### Ruby
-```sh
-ruby server.rb
-```
-
 And visit <http://localhost:3000/>. Try opening multiple tabs!
