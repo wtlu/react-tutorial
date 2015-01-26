@@ -16,7 +16,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var comments = JSON.parse(fs.readFileSync('_comments.json'));
+var comments = JSON.parse(fs.readFileSync('public/comments.json'));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.get('/comments.json', function(req, res) {
 
 app.post('/comments.json', function(req, res) {
   comments.push(req.body);
-  fs.writeFile('_comments.json', JSON.stringify(comments))
+  fs.writeFile('public/comments.json', JSON.stringify(comments))
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify(comments));
 });
